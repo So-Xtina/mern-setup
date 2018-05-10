@@ -1,10 +1,22 @@
 const express = require("express");
+const cors = require("cors");
 const PORT = process.env.PORT || 9000;
 
 const app = express();
 
+app.use(cors());
+
+app.get("/user-data", (req, res) => {
+	const user = {
+		name: "Jim Bob",
+		email: "jimthebob@gmail.com"
+	};
+
+	res.send(user);
+});
+
 app.get("/", (req, res) => {
-	res.send("<h1>App is Working</h1>");
+	res.send("<h1>Hello World!</h1>");
 });
 
 app
