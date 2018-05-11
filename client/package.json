@@ -3,6 +3,11 @@
 	"version": "1.0.0",
 	"description": "Client side for MERN stack setup demo",
 	"main": "index.js",
+	"proxy": {
+		"/api/*": {
+			"target": "http://localhost:9000"
+		}
+	},
 	"scripts": {
 		"start": "node dev_server.js",
 		"dev": "npm run dev --prefix ..",
